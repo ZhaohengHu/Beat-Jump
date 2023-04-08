@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import gameReducer from './gameSlice';
+import levelReducer from './levelSlice';
 import selectingReducer from './SelectingSlice'
+import processReducer from './processSlice'
+import bpmReducer from './beatSlice'
 
 const store = configureStore({
   reducer: {
-    game: gameReducer,
+    level: levelReducer,
     selecting: selectingReducer,
+    process: processReducer,
+    beat: bpmReducer,
   },
 });
 

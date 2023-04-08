@@ -1,0 +1,28 @@
+.ab {
+    position: absolute;
+}
+
+
+.no-list-style {
+    list-style: none;
+}
+
+.bg-w{
+    background-color: #f7f5f2
+}
+
+.bd-r{
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 0 0 10px #d5bdaf;
+}
+
+.pd-1{
+    padding: 1rem;
+}
+
+.tx-c{
+    text-align: center;
+}

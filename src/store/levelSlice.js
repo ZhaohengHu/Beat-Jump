@@ -4,8 +4,8 @@ const initialState = {
   levelNum: 1,
 };
 
-export const gameSlice = createSlice({
-  name: 'game',
+export const levelSlice = createSlice({
+  name: 'level',
   initialState,
   reducers: {
     setLevelNum: (state, action) => {
@@ -14,6 +14,6 @@ export const gameSlice = createSlice({
   },
 });
 
-export const { setLevelNum } = gameSlice.actions;
+export const { setLevelNum } = levelSlice.actions;
 
-export default gameSlice.reducer;
+export default levelSlice.reducer; 

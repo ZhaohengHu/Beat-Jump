@@ -1,3 +1,5 @@
+// 是否正在选择关卡 
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

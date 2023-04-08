@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import './GamePage.css'
 
 function GamePage() {
-  const levelNum = useSelector((state) => state.game.levelNum);
+  const levelNum = useSelector((state) => state.level.levelNum);
   
   return (
     <div className='page'>

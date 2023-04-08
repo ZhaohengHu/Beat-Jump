@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     height: 100%;
     /* background-color: #fff; */
 
@@ -31,4 +30,22 @@
 }
 
 /* 顶部右侧 */
+.control-pannel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #f7f5f2;
+    border-radius: 20px;
+}
 
+.cp-item{
+    margin-right: 0.8rem;
+}
+
+.speed-l{
+    height: 200px;
+    overflow-y: scroll;
+}

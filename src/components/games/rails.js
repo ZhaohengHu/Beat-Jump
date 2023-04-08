@@ -29,7 +29,7 @@ export default function RailContainer({ className, levelNum }) {
   return (
     <div className={className}>
       <Rail levelNum={levelNum} />
-      <Rail levelNum={levelNum} />
+      {/* <Rail levelNum={levelNum} /> */}
     </div>
   )
 }

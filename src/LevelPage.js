@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setLevelNum } from './store/gameSlice'
+import { setLevelNum } from './store/levelSlice'
 import './LevelPage.css';
 
 import FootInfo from './components/footinfo';
@@ -38,7 +38,6 @@ function LevelPage() {
             </button>
           </li>
         </ul>
-        <Link to="/">返回游戏</Link>
       </div>
       <div className='footer'>
         <FootInfo />
