@@ -1,0 +1,24 @@
+.block{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    width: 70px;
+    border: 2px solid #d5bdaf;
+    border-radius: 20%;
+    margin: 0 3px;
+    text-align: center;
+    background-color: #e3d5ca;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}   
+
+.rail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: auto;
+    /* background-color: rgb(63, 205, 89); */
+}
+

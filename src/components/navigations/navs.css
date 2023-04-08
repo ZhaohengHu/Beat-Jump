@@ -1,0 +1,34 @@
+.navs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    /* background-color: #fff; */
+
+}
+
+/* 顶部左侧 */
+.logo-text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #5b4235;
+    transition: all 0.3s ease-in-out;
+    /* cursor: pointer; */
+}
+
+.logo-text > * {
+    padding:0px 20px;
+}
+
+.logo-text img {
+    width: 75x;
+    height: 75px;
+    /* border-radius: 50%; */
+}
+
+/* 顶部右侧 */
+

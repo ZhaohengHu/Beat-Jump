@@ -1,0 +1,48 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 auto;
+    max-width: 1600px;
+    height: 100vh;
+}
+
+.header{
+    height: 13vh;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    /* background: orange; */
+    height: 100%;
+    flex-grow: 1;
+    width: 80%;
+    margin: 0 10%;
+}
+.footer{
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-p{
+    height: 15vh;
+}
+.game-r{
+    height: 100%;
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-s{
+    height: 20vh;
+    width: 70%;
+    margin: 0 15% 5%;
+    background-color: #f8f5f2;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #d5bdaf;
+}
