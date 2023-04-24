@@ -8,8 +8,17 @@
 }
 
 .bg-w{
-    background-color: #f7f5f2
+    background-color: #f7f5f2;
 }
+
+.bg-r{
+    background-color: #cb6c46;
+}
+
+.bg-g{
+    background-color: #6d8d39;
+}
+
 
 .bd-r{
     border-radius: 20px;
@@ -19,10 +28,27 @@
     box-shadow: 0 0 10px #d5bdaf;
 }
 
-.pd-1{
+.pd-0{
+    padding: 0;
+}
+
+.pd-1r{
     padding: 1rem;
+}
+
+.pd-1e{
+    padding: 0.1em 0.6em;
+}
+
+.mg-05e{
+    margin: 0.5em;
 }
 
 .tx-c{
     text-align: center;
+}
+
+.py-10{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }

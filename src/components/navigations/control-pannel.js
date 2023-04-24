@@ -45,10 +45,10 @@ function ControlPannel() {
             <div className="cp-item">
               <button onClick={handleSpeedClick}>BPM{' '}{bpm} </button>
               {isSpeedActive ? (
-                <ul className="speed-l ab bg-w bd-r shadow pd-1 tx-c"
+                <ul className="speed-l ab bg-w bd-r shadow pd-0 mg-05e tx-c"
                     role='listbox'>
                   {bpms.map( b => 
-                    <li className="no-list-style "
+                    <li className="no-list-style pd-1e"
                         role='option'
                         aria-selected={b === bpm}
                         key={b} 

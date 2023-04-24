@@ -8,7 +8,7 @@
 }
 
 .header{
-    padding: 30px;
+    padding: 30px 60px;
 }
 .content{
     display: flex;
@@ -28,23 +28,26 @@
 }
 
 .game-p{
-    flex-grow: 4;
+    height: 33.33333%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .game-r{
-    flex-grow:1;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .game-s{
-    flex-grow: 2;
+
     width: 70%;
-    margin: 0 15% 5%;
+    margin: auto 15% 5%;
     background-color: #f8f5f2;
     border-radius: 20px;
     box-shadow: 0 0 10px #d5bdaf;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-top: auto;
 }

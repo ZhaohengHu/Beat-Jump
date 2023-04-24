@@ -20,12 +20,11 @@
 }
 
 .logo-text > * {
-    padding:0px 20px;
+    padding:0px 0.5rem;
 }
 
 .logo-text img {
-    width: 75x;
-    height: 75px;
+    height: 3.5rem;
     /* border-radius: 50%; */
 }
 
@@ -33,7 +32,8 @@
 .control-pannel {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap:1rem;
     height: 100%;
     box-sizing: border-box;
     padding: 1rem;
@@ -41,11 +41,17 @@
     border-radius: 20px;
 }
 
-.cp-item{
-    margin-right: 0.8rem;
-}
 
 .speed-l{
     height: 200px;
     overflow-y: scroll;
+}
+.speed-l::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.speed-l > *:hover{
+    background-color: #d6ccc2;
+
 }
