@@ -1,0 +1,9 @@
+.ready-block{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid #c3825d;
+    border-radius: 20%;
+    margin: 0 3px;
+    color: black;
+}
