@@ -1,11 +1,10 @@
 .block{
     display: inline-block;
-    height: 70px;
-    line-height: 70px;
-    width: 70px;
+    height: 2.3em;
+    line-height: 2.3em;
+    width: 2.3em;
     border: 2px solid #d5bdaf;
     border-radius: 20%;
-    margin: 0 3px;
     text-align: center;
     background-color: #e3d5ca;
     font-size: 2rem;
@@ -17,8 +16,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5em;
     height: 15vh;
     width: auto;
     /* background-color: rgb(63, 205, 89); */
 }
 
+.block-container{
+    position: relative;
+}
+
+.pointer{
+    position: absolute;
+    left: 33%;
+    top: -25%;
+    width: 0;
+    height: 0;
+    border-left: 0.8em solid transparent;
+    border-right: 0.8em solid transparent;
+    border-top: 0.8em solid red;
+    visibility: hidden;
+}
