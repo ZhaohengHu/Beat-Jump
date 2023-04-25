@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    bpm: 80,
+    bpm: 60,
 }
 
 export const bpmSlice = createSlice({
