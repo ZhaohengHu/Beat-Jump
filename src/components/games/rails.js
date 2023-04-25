@@ -21,8 +21,10 @@ export function Rail({ levelNum }) {
   const bpmState = useSelector((state) => state.beat.bpm);
   const processState = useSelector((state) => state.process.status);
   let len = notes.length;
+  
 
   if (processState === "processing") {
+    console.log("In Rail", new Date().getTime())
     let pointers = document.getElementsByClassName("pointer");
     console.log("here", pointers[0]);
     pointers[0].style.visibility = 'visible';

@@ -41,13 +41,14 @@
     align-items: center;
 }
 .game-s{
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 70%;
     margin: auto 15% 5%;
     background-color: #f8f5f2;
     border-radius: 20px;
     box-shadow: 0 0 10px #d5bdaf;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 2rem 1rem;
     margin-top: auto;
 }

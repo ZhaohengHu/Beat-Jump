@@ -15,7 +15,7 @@ function ControlPannel() {
 
 
   // 构造从30-180的数组
-  const bpms = Array.from({length: 151}, (v, k) => k + 30)
+  const bpms = Array.from({length: 91}, (v, k) => k + 30)
   function handleLinkClick(){
     dispatch(setIsSelecting(!isSelecting))
     dispatch(setProcess('waiting'))
