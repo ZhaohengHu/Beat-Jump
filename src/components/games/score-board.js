@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./score-board.css";
 import { useSelector } from "react-redux";
 import levels from "../levels/levels";  
@@ -13,17 +13,16 @@ export default function ScoreBoard({ className }) {
   if(processState === 'processing') {
     console.log("In ScoreBoard", new Date().getTime())
   }
-
   
   return (
     <div className={className}>
       <div className="score-left">
         <div className="score-left-item">
-          <span>98.73%</span>
+          <span>97.34%</span>
           <span>准确率</span>
         </div>
         <div className="score-left-item">
-          <span>00:03</span>
+          <Timer/>
           <span>时间</span>
         </div>
       </div>
@@ -47,4 +46,30 @@ export default function ScoreBoard({ className }) {
       </div>
     </div>
   );
+}
+
+export function Timer(){
+    const processState = useSelector((state) => state.process.status);
+    const [time, setTime] = useState(0);
+
+    useEffect(()=>{
+        let timer = null;
+        if(processState === 'processing') {
+          timer = setInterval(()=>{
+              setTime(time => time+1);
+          }, 1000);
+        } else if(processState === 'ending') {
+          clearInterval(timer);
+        }
+        return () => clearInterval(timer);
+    }, [processState]);
+
+    function formatTime(time) {
+      const minutes = Math.floor(time/60);
+      const seconds = time%60;
+      return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    return (
+      <span>{formatTime(time)}</span>
+    );
 }

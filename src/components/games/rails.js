@@ -30,9 +30,10 @@ export function Rail({ levelNum }) {
     pointers[0].style.visibility = 'visible';
     // 遍历pointers
     let i = 0;
+    // let start = performance.now()
     let intervalId = setInterval(()=>{
       pointers[i].style.visibility = 'hidden';
-      console.log(i)
+      // console.log(`第${i}个指针出现的时间${performance.now()-start}`)
       if(i+1 >= pointers.length) {
         clearInterval(intervalId);
         return;
