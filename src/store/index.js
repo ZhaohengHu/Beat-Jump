@@ -3,6 +3,8 @@ import levelReducer from './levelSlice';
 import selectingReducer from './SelectingSlice'
 import processReducer from './processSlice'
 import bpmReducer from './beatSlice'
+import judgedResReducer from './judgedResSlice'
+import ckpReducer from './ckpSlice'
 
 const store = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ const store = configureStore({
     selecting: selectingReducer,
     process: processReducer,
     beat: bpmReducer,
+    judgedRes: judgedResReducer,
+    ckp: ckpReducer,
   },
 });
 

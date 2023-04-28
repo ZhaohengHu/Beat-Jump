@@ -5,6 +5,8 @@ import { setIsSelecting } from '../../store/SelectingSlice'
 import { setProcess } from "../../store/processSlice";
 import { setBpm } from '../../store/beatSlice'
 import '.././../style.css'
+import { setCkp } from "../../store/ckpSlice";
+import { setJudgedRes } from "../../store/judgedResSlice";
 
 function ControlPannel() {
   const levelNum = useSelector((state) => state.level.levelNum);
@@ -17,8 +19,10 @@ function ControlPannel() {
   // 构造从30-180的数组
   const bpms = Array.from({length: 91}, (v, k) => k + 30)
   function handleLinkClick(){
-    dispatch(setIsSelecting(!isSelecting))
-    dispatch(setProcess('waiting'))
+    dispatch(setIsSelecting(!isSelecting));
+    dispatch(setProcess('waiting'));
+    dispatch(setCkp(0));
+    dispatch(setJudgedRes(' '));
   }
 
   function handleSpeedClick(){

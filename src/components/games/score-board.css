@@ -1,5 +1,5 @@
 .score-left{
-    flex: 1 0px;
+    flex: 3 0px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -29,8 +29,8 @@
 }
 
 .score-right{
-    flex:1 0px;
-    padding: 0 1rem;
+    flex:4 0px;
+    /* padding: 0 0.2rem; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -39,8 +39,14 @@
 }
 
 
-.score-right-item span:nth-child(1){
-    padding-right: 0.3rem;
+.score-right-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 2.5em;
 }
 
-
+.score-right-item :nth-child(2){
+    flex: 1;
+    text-align: center;
+}

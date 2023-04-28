@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navs from "./components/navigations/navs";
 import levels from "./components/levels/levels";
 import Process from "./components/games/process";
@@ -8,6 +8,8 @@ import FootInfo from "./components/footinfo";
 import { useDispatch, useSelector } from "react-redux";
 import "./GamePage.css";
 import { setProcess } from "./store/processSlice";
+import { setJudgedRes } from "./store/judgedResSlice";
+import { setCkp } from "./store/ckpSlice";
 
 // 1. waiting （等待开始）
 // 2. ready (预备状态，节奏提示)
@@ -20,6 +22,7 @@ const GOODGAP = 100;
 const BADGAP = 150;
 
 function GamePage() {
+  // TODO redux和useState是否可以混用？比如这个curCkp,我传递了好几层,不能在这里写state,否则组件本身会一直刷新
   const levelNum = useSelector((state) => state.level.levelNum);
   const bpm = useSelector((state) => state.beat.bpm);
   const levelArr = levels[levelNum - 1];
@@ -32,7 +35,7 @@ function GamePage() {
   let timemap = parseTimeCheckpoint(levelArr, beattime);
   let judeged = new Array(ckpNum).fill(false);
   let curJudge = 0;
-  console.log(`timemap: ${JSON.stringify(timemap)}`);
+  console.log(`timemap: ${JSON.stringify(timemap)} curJudge: ${curJudge}`);
 
   let start;
   function handleKeyDown(e) {
@@ -46,20 +49,27 @@ function GamePage() {
     // 如果在timemap[curJudge][2]和timemap[curJudge][3]之间，那么就是good
     // 如果在timemap[curJudge][4]和timemap[curJudge][5]之间，那么就是perfect
     // 时间序列其实是 [0]-[2]-[4]-[5]-[3]-[1]，所以bad,good,perfect的判定区间是不连续的
+    // 在这里设置 judgedRes 的状态
     if(elapsed > timemap[curJudge][0] && elapsed < timemap[curJudge][2] || elapsed > timemap[curJudge][3] && elapsed < timemap[curJudge][1]) {
       console.log(`第${curJudge}个拍点bad`);
+      dispatch(setJudgedRes('bad'));
+      dispatch(setCkp(curJudge)); 
       judeged[curJudge] = true;
       return;
     } 
 
     if(elapsed > timemap[curJudge][2] && elapsed < timemap[curJudge][4] || elapsed > timemap[curJudge][5] && elapsed < timemap[curJudge][3]) {
       console.log(`第${curJudge}个拍点good`);
+      dispatch(setJudgedRes('good'));
+      dispatch(setCkp(curJudge)); 
       judeged[curJudge] = true;
       return;
     }
 
     if(elapsed > timemap[curJudge][4] && elapsed < timemap[curJudge][5]) {
       console.log(`第${curJudge}个拍点perfect`);
+      dispatch(setJudgedRes('perfect'));
+      dispatch(setCkp(curJudge)); 
       judeged[curJudge] = true;
       return;
     }
@@ -80,6 +90,8 @@ function GamePage() {
     if (curJudge < ckpNum) {
       if (elapsed > timemap[curJudge][1]) {
         if (judeged[curJudge] === false) {
+          dispatch(setJudgedRes('miss'));
+          dispatch(setCkp(curJudge));   // TODO 这里setCurCkp是不是会一直重复执行，要是在GamePage用useState的话，会一直瞅重复刷新GamePage组件
           console.log(
             `第${curJudge}个音符块miss, miss时间是${timemap[curJudge][1]}`
           );
@@ -93,19 +105,22 @@ function GamePage() {
     window.requestAnimationFrame(step);
   }
 
-  if (processState === "processing") {
-    window.requestAnimationFrame(step);
-    document.addEventListener("keydown", handleKeyDown);
-  }
+  useEffect(() => {
+    if (processState === "processing") {
+      window.requestAnimationFrame(step);
+      document.addEventListener("keydown", handleKeyDown);
+    }
+  }, [processState]);
+
   return (
     <div className="page">
       <div className="header">
         <Navs />
       </div>
       <div className="content">
-        <Process className="game-p" />
+        <Process className="game-p"/>
         <RailContainer className="game-r" levelNum={levelNum} />
-        <ScoreBoard className="game-s" />
+        <ScoreBoard className="game-s"/>
       </div>
       <div className="footer">
         <FootInfo />
